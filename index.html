@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu Koko Minto</title>
+
+  <!-- CSS sama seperti sebelumnya -->
+  <link rel="stylesheet" href="style.CSS" />
+
+  <!-- Muat JS di‑defer supaya fungsi sudah siap saat klik -->
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <h1>Koko Minto Menu</h1>
+
+  <!-- ====== GRID MENU ====== -->
+  <div class="menu-container">
+    <!-- Menu Makanan -->
+    <div class="item" data-name="Maguro Onigiri" data-price="12000" onclick="isiInput(this)">
+      <img src="gambar/oni.png" alt="Maguro Onigiri">
+      <p>Maguro Onigiri<br>Rp12.000</p>
+    </div>
+    <div class="item" data-name="Mentai Tori Don" data-price="15000" onclick="isiInput(this)">
+      <img src="gambar/mentai.png" alt="Mentai Tori Don">
+      <p>Mentai Tori Don<br>Rp15.000</p>
+    </div>
+    <div class="item" data-name="Yaki Pan" data-price="7000" onclick="isiInput(this)">
+      <img src="gambar/boy.png" alt="Yaki Pan">
+      <p>Yaki Pan<br>Rp7.000</p>
+    </div>
+
+    <!-- Menu Minuman -->
+    <div class="item" data-name="Kinari Coffee" data-price="15000" onclick="isiInput(this)">
+      <img src="gambar/kopi.png" alt="Kinari Coffee">
+      <p>Kinari Coffee<br>Rp15.000</p>
+    </div>
+    <div class="item" data-name="Yūgen Matcha" data-price="15000" onclick="isiInput(this)">
+      <img src="gambar/macha.png" alt="Yūgen Matcha">
+      <p>Yūgen Matcha<br>Rp15.000</p>
+    </div>
+    <div class="item" data-name="Yaki Pop" data-price="15000" onclick="isiInput(this)">
+      <img src="gambar/yakult.png" alt="Yaki Pop">
+      <p>Yaki Pop<br>Rp15.000</p>
+    </div>
+  </div>
+
+  <!-- ====== FORM PESANAN ====== -->
+  <div class="form-container">
+    <h3>Pesanan Anda</h3>
+
+    <!-- id=form agar mudah di‑tangkap di JS -->
+    <form id="orderForm">
+
+      <!-- Nama pemesan (huruf saja) -->
+      <label for="customerName">Nama Pemesan</label>
+      <input
+        type="text"
+        id="customerName"
+        placeholder="Nama Anda"
+        required
+        pattern="[A-Za-z\s]+"
+        title="Hanya huruf dan spasi"
+      >
+
+      <!-- Nomor meja (angka saja) -->
+      <label for="tableNumber">Nomor Meja</label>
+      <input
+        type="number"
+        id="tableNumber"
+        placeholder="Nomor Meja"
+        min="1"
+        required
+      >
+
+      <!-- Terisi otomatis saat gambar diklik -->
+      <label for="namaMenu">Nama Menu</label>
+      <input type="text" id="namaMenu" placeholder="Nama makanan / minuman" readonly>
+
+      <label for="hargaMenu">Harga (Rp)</label>
+      <input type="number" id="hargaMenu" placeholder="Harga" readonly>
+
+      <button type="submit">Pesan Sekarang</button>
+    </form>
+  </div>
+
+</body>
+</html>
